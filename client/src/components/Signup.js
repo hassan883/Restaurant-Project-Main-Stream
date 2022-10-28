@@ -7,15 +7,17 @@ import equals from 'validator/lib/equals';
 import './Signup.css';
 import { showErrorMsg,showSuccessMsg } from '../helpers/message';
 import { showLoading } from '../helpers/loading';
+import {signup} from '../api/auth';
+import { response } from 'express';
 const Signup = () => {
     const [formData, setFormData] = useState({
-        username: '',
-        email: '',
-        password: '',
-        password2: '',
+        username: 'hassan',
+        email: 'hassan@gmail.com',
+        password: '123',
+        password2: '123 ',
         successMsg: false,
         errorMsg: false,
-        loading: true
+        loading: false
     });
     const {username, email, password, password2, successMsg, errorMsg, loading} = formData;
     // Event handler
@@ -44,9 +46,25 @@ const Signup = () => {
                 ...formData, errorMsg: "Passwords do not match"
             });
         } else {
-            setFormData({
-                ...formData, successMsg: "Account create successfully!"
-            })
+            const {username, email, password} = formData;
+            const Data = {username, email, password};
+            setFormData({...formData, loading: true});
+            signup(Data)
+                .then((response)=>{
+                    console.log(response);
+                    setFormData({
+                        username: '',
+                        email: '',
+                        password: '',
+                        password2: '',
+                        loading: false,
+                        successMsg: response.Data.successMessage,
+                    })
+                })
+                .catch(err=>{
+                    console.log("Axios signup error: ", err);
+                    setFormData({...formData, loading: false})
+                })
         }
     }
 
