@@ -8,13 +8,13 @@ import './Signup.css';
 import { showErrorMsg,showSuccessMsg } from '../helpers/message';
 import { showLoading } from '../helpers/loading';
 import {signup} from '../api/auth';
-import { response } from 'express';
+// import { response } from 'express';
 const Signup = () => {
     const [formData, setFormData] = useState({
         username: 'hassan',
         email: 'hassan@gmail.com',
         password: '123',
-        password2: '123 ',
+        password2: '123',
         successMsg: false,
         errorMsg: false,
         loading: false
