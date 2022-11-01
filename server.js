@@ -10,6 +10,13 @@ const connectDB = require('./database/db');
 
 app.use(cors());
 app.use(morgan('dev'));
+app.use(express.json());
+
+
+app.get('/', (req, res)=>{
+    res.send("Insided the Server");
+})
+
 
 connectDB();
 const port = process.env.PORT || 5000;
