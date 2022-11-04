@@ -47,9 +47,9 @@ const Signup = () => {
             });
         } else {
             const {username, email, password} = formData;
-            const Data = {username, email, password};
+            const data = {username, email, password};
             setFormData({...formData, loading: true});
-            signup(Data)
+            signup(data)
                 .then((response)=>{
                     console.log(response);
                     setFormData({
@@ -58,7 +58,7 @@ const Signup = () => {
                         password: '',
                         password2: '',
                         loading: false,
-                        successMsg: response.Data.successMessage,
+                        successMsg: response.data.successMessage,
                     })
                 })
                 .catch(err=>{
