@@ -4,7 +4,7 @@ import isEmail from 'validator/lib/isEmail';
 import isEmpty from 'validator/lib/isEmpty';
 import equals from 'validator/lib/equals';
 
-import './Signup.css';
+import './App.css';
 import { showErrorMsg,showSuccessMsg } from '../helpers/message';
 import { showLoading } from '../helpers/loading';
 import {signup} from '../api/auth';
