@@ -1,5 +1,12 @@
 .signup-container{
-    background-image: url('backgroun_signup_form.jpg');
+    background-image: url('signup.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity:0.8;
+}
+.signin-container{
+    background-image: url('signin-bkkg.jpeg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;

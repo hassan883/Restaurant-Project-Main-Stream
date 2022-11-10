@@ -101,7 +101,7 @@ const Signup = () => {
                                 <button type="submit" className="btn btn-primary">Sign up</button>
                             </div>
                             <div className="col-md-6">
-                                <p style={{color:'black'}}>Already have an account! <Link to='/signin'>Sign In</Link></p>
+                                <p style={{color:'white'}}>Already have an account! <Link to='/signin'>Sign In</Link></p>
 
                             </div>
 
